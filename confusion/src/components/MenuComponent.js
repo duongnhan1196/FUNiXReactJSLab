@@ -13,14 +13,35 @@ class Menu extends Component {
     }
     renderDish(dish) {
       if(dish != null) {
+        const cmt = dish.comments.map((comment) => {
+          return(
+            <div className='container'>
+            <div key={comment.id}>
+              
+              <p>{comment.comment}</p>
+              <p>-- {comment.author}, </p>
+            </div>
+            </div>
+          );
+        });
         return(
-          <Card>
-            <CardImg width="100%" src={dish.image} alt={dish.name} />
+          <Card className="col-12">
+            <Card className="col-6 float-left">
+            <CardImg width="100%" src={dish.image} alt={dish.name}/>
             <CardBody>
               <CardTitle>{dish.name}</CardTitle>
               <CardText>{dish.description}</CardText>
             </CardBody>
-          </Card>
+            </Card>
+            <Card className="col-5">
+              <h4>Comments</h4>
+              <div className='row'>{cmt}</div>
+              <CardBody>
+                <CardTitle>{dish.name}</CardTitle>
+                <CardText>{dish.description}</CardText>
+              </CardBody>
+            </Card>
+          </Card>          
         );
       }
       else {
