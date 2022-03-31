@@ -4,16 +4,15 @@ import Menu from './components/MenuComponent';
 import StaffList from './components/StaffListComponent';
 import './App.css';
 import { DISHES } from './shared/dishes';
+import { STAFFS, DEPARTMENTS } from './shared/staffs';
 import { Component } from 'react';
 
 
 class App extends Component {
-
-  
   constructor(props) {
     super(props);
     this.state = {
-      dishes: DISHES
+      staffs: STAFFS
     };
   }
   render() {
@@ -25,7 +24,7 @@ class App extends Component {
         </div>
       </Navbar>
       {/*<Menu dishes={this.state.dishes}/>*/}
-      <StaffList />
+      <StaffList staffs={this.state.staffs} />
     </div>
   );
   }
