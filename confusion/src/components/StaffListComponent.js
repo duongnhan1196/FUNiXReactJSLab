@@ -1,6 +1,6 @@
 import React, { Component} from 'react';
 import { Card, CardText, CardTitle} from 'reactstrap'; 
-import {Media} from 'reactstrap';
+import { UncontrolledCarousel } from 'reactstrap';
 
 class StaffList extends Component{
 
@@ -14,11 +14,12 @@ class StaffList extends Component{
         this.setState({ selectedStaff: staff});
     }
     renderStaff(staff) {
-        if (staff != null){
+        if (staff != null) {
+            const dateB = DataTransfer(staff.doB,"dd/mm/yyyy")
             return(
                 <Card className='col-sm-12'>
                     <CardTitle>Họ và tên: {staff.name}</CardTitle>
-                    <CardText>Ngày sinh: {staff.doB}</CardText>
+                    <CardText>Ngày sinh: {DataTransfer(staff.doB, "dd/mm/yyyy")}</CardText>
                     <CardText>Ngày vào công ty: {staff.startDate}</CardText>
                     <CardText>Phòng ban: {staff.name}</CardText>
                     <CardText>Số ngày nghỉ còn lại: {staff.annualLeave}</CardText>
