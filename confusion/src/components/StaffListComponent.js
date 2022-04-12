@@ -1,5 +1,5 @@
 import React, { Component} from 'react';
-import { Card, CardText, CardTitle} from 'reactstrap'; 
+import { Card, CardText, CardTitle, Collapse } from 'reactstrap'; 
 import dateFormat from 'dateformat';
 
 class StaffList extends Component{
@@ -15,16 +15,19 @@ class StaffList extends Component{
     }
     renderStaff(staff) {
         if (staff != null) {
-            return(
-                <Card className='col-sm-12'>
-                    <CardTitle>Họ và tên: {staff.name}</CardTitle>
-                    <CardText>Ngày sinh: {dateFormat(staff.doB, "dd/mm/yyyy")}</CardText>
-                    <CardText>Ngày vào công ty: {dateFormat(staff.startDate, "dd/mm/yyyy")}</CardText>
-                    <CardText>Phòng ban: {staff.department.name}</CardText>
-                    <CardText>Số ngày nghỉ còn lại: {staff.annualLeave}</CardText>
-                    <CardText>Số ngày đã làm thêm: {staff.overTime}</CardText>
-                    
-                </Card>
+            return (
+                    <Card className='col-sm-12' style={{
+                        backgroundColor: '#80ffff',
+                        borderColor: '#333'
+                    }}>
+                        <CardTitle>Họ và tên: {staff.name}</CardTitle>
+                        <CardText>Ngày sinh: {dateFormat(staff.doB, "dd/mm/yyyy")}</CardText>
+                        <CardText>Ngày vào công ty: {dateFormat(staff.startDate, "dd/mm/yyyy")}</CardText>
+                        <CardText>Phòng ban: {staff.department.name}</CardText>
+                        <CardText>Số ngày nghỉ còn lại: {staff.annualLeave}</CardText>
+                        <CardText>Số ngày đã làm thêm: {staff.overTime}</CardText>
+                        
+                    </Card>
             );
         }
         else{
@@ -34,13 +37,14 @@ class StaffList extends Component{
         }
     }
 
-
-
     render() {
         const stafflist = this.props.staffs.map((staff) => {
             return (
                 <div key={staff.id} className="col-md-4 col-sm-6 p-1">
-                    <Card onClick={() => this.onStaffSelect(staff)}>
+                    <Card onClick={() => this.onStaffSelect(staff)} style={{
+                        backgroundColor: '#80ffff',
+                        borderColor: '#333'
+                    }}>
                             <CardText> {staff.name} </CardText>
                     </Card>
                 </div>
