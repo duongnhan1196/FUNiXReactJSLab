@@ -1,5 +1,5 @@
 import React, { Component} from 'react';
-import { Card, CardText, CardTitle, CardSubtitle ,Button, ButtonGroup, ButtonToolbar } from 'reactstrap'; 
+import { Card, CardText, CardTitle, CardSubtitle  } from 'reactstrap'; 
 import dateFormat from 'dateformat';
 
 class StaffList extends Component{
@@ -8,7 +8,6 @@ class StaffList extends Component{
         super(props);
         this.state = {
             selectedStaff: null,
-            coLumDefault: "col-12 col-md-4 col-sm-6 p-1"
         };
     }
     onStaffSelect(staff) {
@@ -64,22 +63,6 @@ class StaffList extends Component{
                     <CardSubtitle className={"m-2 mt-1"} color="secondary">
                         Số cột hiển thị 
                     </CardSubtitle>
-                    <ButtonToolbar>
-                    <ButtonGroup >
-                            <Button onClick={() => this.setColum("col-12 col-md-12 col-sm-6 p-1")} color="secondary" outline>
-                            1
-                        </Button>
-                            <Button onClick={() => this.setColum("col-12 col-md-6 col-sm-6 p-1")} color="secondary" outline>
-                            2
-                        </Button>
-                            <Button onClick={() => this.setColum("col-12 col-md-4 col-sm-6 p-1")} color="secondary" outline>
-                            3
-                        </Button>
-                            <Button onClick={() => this.setColum("col-12 col-md-2 col-sm-6 p-1")} color="secondary" outline>
-                            6 
-                        </Button>
-                    </ButtonGroup>
-                    </ButtonToolbar>
                 </div>
                 <div className='row'>
                     {stafflist}
