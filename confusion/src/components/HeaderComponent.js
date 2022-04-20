@@ -3,7 +3,6 @@ import { Navbar, NavbarBrand, Nav, NavbarToggler, Collapse, NavItem, Jumbotron }
 import { NavLink } from 'react-router-dom';
 
 class Header extends Component {
-
     constructor(props) {
         super(props);
         this.state = {
@@ -17,10 +16,9 @@ class Header extends Component {
             isNavOpen: !this.state.isNavOpen
         });
     }
-
     render() {
         return (
-            <>
+            <div>
                 <Jumbotron>
                     <div className="container">
                         <div className="row">
@@ -28,38 +26,40 @@ class Header extends Component {
                         </div>
                     </div>
                 </Jumbotron>
-                
-                <Navbar dark expand="md">
-                    <div className='container'>
-                        <NavbarToggler onClick={this.toggleNav} />
-                        <NavbarBrand className="mr-auto" href="/">
-                            <img src="assets/images/logo.png" height="30" width="41"
-                                alt="logo" />
+                <div>
+                    <Navbar color="dark" expand="md" dark>
+                        <NavbarBrand  className="mr-auto" href="/">
+                            <img src="assets/images/logo.png" height="40" width="50" alt="logo" />
                         </NavbarBrand>
+                        <NavbarToggler onClick={this.toggleNav} />
                         <Collapse isOpen={this.state.isNavOpen} navbar>
-                            <Nav navbar>
+                            <Nav
+                                className="me-auto"
+                                navbar
+                            >
                                 <NavItem>
                                     <NavLink className="nav-link" to="/staffs">
-                                        <span className="fa fa-home fa-lg"></span> Nhân Viên
+                                        <span className="fa fa-address-card-o"></span> Nhân viên
                                     </NavLink>
                                 </NavItem>
                                 <NavItem>
                                     <NavLink className="nav-link" to="/department">
-                                        <span className="fa fa-info fa-lg"></span> Phòng Ban
+                                        <span className="fa fa-users"></span> Phòng Ban
                                     </NavLink>
                                 </NavItem>
                                 <NavItem>
-                                    <NavLink className="nav-link" to="/salary">
-                                        <span className="fa fa-list fa-lg"></span> Bản Lương
+                                    <NavLink className="nav-link" to="/department">
+                                        <span className="fa fa-money"></span> Bảng Lương
                                     </NavLink>
                                 </NavItem>
                             </Nav>
                         </Collapse>
-                    </div>
-                </Navbar>
-
-            </>
+                    </Navbar>
+                </div>
+            </div>
+            
         );
+
     }
 }
 
