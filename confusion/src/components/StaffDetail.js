@@ -1,24 +1,27 @@
 import React from "react";
-import { Card, CardTitle, CardText, Breadcrumb, BreadcrumbItem } from 'reactstrap';
+import { Card, CardTitle, CardText, Breadcrumb, BreadcrumbItem, CardImg, Table, CardGroup } from 'reactstrap';
 import dateFormat from 'dateformat';
 import { Link } from 'react-router-dom';
 
 
 
- function RenderStaff(staff) {
-     return (
-             <Card className='col-sm-12' style={{
-                 backgroundColor: '#80ffff',
-                 borderColor: '#333'
-             }}>
-                 <CardTitle>Họ và tên: {staff.name}</CardTitle>
-                 <CardText>Ngày sinh: {dateFormat(staff.doB, "dd/mm/yyyy")}</CardText>
-                 <CardText>Ngày vào công ty: {dateFormat(staff.startDate, "dd/mm/yyyy")}</CardText>
-                 <CardText>Phòng ban: {staff.department.name}</CardText>
-                 <CardText>Số ngày nghỉ còn lại: {staff.annualLeave}</CardText>
-                 <CardText>Số ngày đã làm thêm: {staff.overTime}</CardText>
-             </Card>
-        );
+function RenderStaff({ staff }) {
+    return (
+        <div class="container">
+            <div className="row">
+                <img src={staff.image} alt={staff.name} className="col-12 col-md-3 col-sm-4"/>
+                <div className="col-12 col-md-9 col-sm-8">
+                    <CardTitle>Họ và tên: {staff.name}</CardTitle>
+                    <CardText>Ngày sinh: {dateFormat(staff.doB, "dd/mm/yyyy")}</CardText>
+                    <CardText>Ngày vào công ty: {dateFormat(staff.startDate, "dd/mm/yyyy")}</CardText>
+                    <CardText>Phòng ban: {staff.department.name}</CardText>
+                    <CardText>Số ngày nghỉ còn lại: {staff.annualLeave}</CardText>
+                    <CardText>Số ngày đã làm thêm: {staff.overTime}</CardText>
+                </div>
+                
+            </div>
+        </div>
+    );
 }
 const StaffDetail = (props) => {
     if (props.staff != null)
@@ -31,7 +34,7 @@ const StaffDetail = (props) => {
                     </Breadcrumb>
                 </div>
                 <div className="row">
-                    <div className="col-12 col-md-5 m-1">
+                    <div className>
                         <RenderStaff staff={props.staff} />
                     </div>
                 </div>

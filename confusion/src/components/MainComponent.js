@@ -35,7 +35,7 @@ class Main extends Component {
                 <Switch>
                     <Route exact path="/staffs" component={() => <StaffList staffs={this.state.staffs} />} />      
                     <Route path="/staffs/:id" component={StaffWithId} />
-                    <Route path="/department" component={() => <Department departments={this.state.departments} />} />
+                    <Route path="/departments" component={() => <Department departments={this.state.departments} />} />
                     {/*<Route path="/salary" component={ } />*/}
                      <Redirect to="/staffs" />
                 </Switch>
