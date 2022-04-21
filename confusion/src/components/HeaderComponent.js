@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Navbar, NavbarBrand, Nav, NavbarToggler, Collapse, NavItem, Jumbotron } from 'reactstrap';
+import { Navbar, NavbarBrand, Nav, NavbarToggler, Collapse, NavItem, Jumbotron, CardTitle, CardHeader } from 'reactstrap';
 import { NavLink } from 'react-router-dom';
 
 class Header extends Component {
@@ -19,16 +19,17 @@ class Header extends Component {
     render() {
         return (
             <div>
-                <Jumbotron>
+                <Jumbotron style={{ backgroundColor: '#4da6ff' }}>
                     <div className="container">
                         <div className="row">
-                                <h1>Ứng dụng quản lý nhân sự v2.0</h1>
+                            <h1>Ứng dụng quản lý nhân sự v2.0</h1>
                         </div>
                     </div>
-                </Jumbotron>
+                </Jumbotron >
+
                 <div>
                     <Navbar color="dark" expand="md" dark>
-                        <NavbarBrand  className="mr-auto" href="/">
+                        <NavbarBrand className="mr-auto" href="/">
                             <img src="assets/images/logo.png" height="40" width="50" alt="logo" />
                         </NavbarBrand>
                         <NavbarToggler onClick={this.toggleNav} />
@@ -57,7 +58,7 @@ class Header extends Component {
                     </Navbar>
                 </div>
             </div>
-            
+
         );
 
     }

@@ -3,7 +3,7 @@ import React from 'react';
 
 function Footer(props) {
     return (
-        <div className="footer" style={{ backgroundColor: '#d1e0e0'}}>
+        <div className="footer" style={{ backgroundColor: '#4da6ff'}}>
             <div className="container">
                 <div className="row justify-content-center">
                     <div className="col-7 col-sm-6">

@@ -1,7 +1,7 @@
 import React from "react";
 import { Card, CardText, CardTitle } from 'reactstrap';
 
-function RenderDepartment({department}) {
+function RenderDepartment({ department }) {
     return (
         <Card>
             <CardTitle className="p-1">{department.name}</CardTitle>
@@ -20,11 +20,12 @@ function Department(props) {
         );
     });
     return (
-        <div class="container">
-            <div className="row">
-                {department}
+        <div style={{ backgroundColor: '#d1e0e0' }}>
+            <div className="container">
+                <div className="row">{department}</div>
             </div>
         </div>
+        
     );
 }
 
