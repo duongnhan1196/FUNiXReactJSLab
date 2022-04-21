@@ -8,7 +8,7 @@ function RenderCard({ staff }) {
         <div >
             <Card>
                 <Link to={`/staffs/${staff.id}`}>
-                    <CardImg src={staff.image} alt={StaffList.name} />
+                    <CardImg src={staff.image} alt={staff.name} />
                 </Link>
                      <CardBody>
                         <CardText className="text-center">{staff.name}</CardText>

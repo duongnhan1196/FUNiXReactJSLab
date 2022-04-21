@@ -34,7 +34,7 @@ class Header extends Component {
                         <NavbarToggler onClick={this.toggleNav} />
                         <Collapse isOpen={this.state.isNavOpen} navbar>
                             <Nav
-                                className="me-auto"
+                                className="mr-auto"
                                 navbar
                             >
                                 <NavItem>
@@ -48,7 +48,7 @@ class Header extends Component {
                                     </NavLink>
                                 </NavItem>
                                 <NavItem>
-                                    <NavLink className="nav-link" to="/department">
+                                    <NavLink className="nav-link" to="/salary">
                                         <span className="fa fa-money"></span> Bảng Lương
                                     </NavLink>
                                 </NavItem>
