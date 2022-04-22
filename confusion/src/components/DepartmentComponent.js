@@ -1,5 +1,6 @@
 import React from "react";
-import { Card, CardText, CardTitle } from 'reactstrap';
+import { Card, CardText, CardTitle, Breadcrumb, BreadcrumbItem } from 'reactstrap';
+import { Link } from 'react-router-dom';
 
 function RenderDepartment({ department }) {
     return (
@@ -22,6 +23,12 @@ function Department(props) {
     return (
         <div style={{ backgroundColor: '#d1e0e0' }}>
             <div className="container">
+                <div className='row'>
+                    <Breadcrumb>
+                        <BreadcrumbItem><Link to='/staffs'>Nhân Viên</Link></BreadcrumbItem>
+                        <BreadcrumbItem active>Phòng Ban</BreadcrumbItem>
+                    </Breadcrumb>
+                </div>
                 <div className="row">{department}</div>
             </div>
         </div>
