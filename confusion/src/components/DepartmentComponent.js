@@ -24,8 +24,9 @@ function Department(props) {
         <div style={{ backgroundColor: '#d1e0e0' }}>
             <div className="container">
                 <div className='row'>
-                    <Breadcrumb>
-                        <BreadcrumbItem><Link to='/staffs'>Nhân Viên</Link></BreadcrumbItem>
+                    <Breadcrumb >
+                        
+                        <BreadcrumbItem><Link to='/staffs'><b>Nhân Viên</b></Link></BreadcrumbItem>
                         <BreadcrumbItem active>Phòng Ban</BreadcrumbItem>
                     </Breadcrumb>
                 </div>
