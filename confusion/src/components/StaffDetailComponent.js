@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, CardTitle, CardText, Breadcrumb, BreadcrumbItem, CardImg, Table, CardGroup } from 'reactstrap';
+import { CardTitle, CardText, Breadcrumb, BreadcrumbItem} from 'reactstrap';
 import dateFormat from 'dateformat';
 import { Link } from 'react-router-dom';
 
@@ -9,7 +9,7 @@ function RenderStaff({ staff }) {
     return (
         <div className="row">
             <div className="col-12 col-md-3 col-sm-4">
-                <img src={staff.image} alt={staff.name} />
+                <img src={staff.image} alt={staff.name} width="100%"/>
             </div>
                 <div className="col-12 col-md-9 col-sm-8">
                     <CardTitle>Họ và tên: {staff.name}</CardTitle>
@@ -23,7 +23,7 @@ function RenderStaff({ staff }) {
     );
 }
 const StaffDetail = (props) => {
-    if (props.staff != null)
+    if (props.staff != null) {
         return (
             <div className="container">
                 <div className='row'>
@@ -33,12 +33,16 @@ const StaffDetail = (props) => {
                     </Breadcrumb>
                 </div>
                 <div className="row">
-                    <div className>
+                    <div className="col-12">
                         <RenderStaff staff={props.staff} />
                     </div>
                 </div>
             </div>
         )
+    }
+    else {
+        return <div></div>
+    }
 }
 
 

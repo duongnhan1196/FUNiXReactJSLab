@@ -3,8 +3,8 @@ import { Card, CardText, CardBody, CardTitle, Breadcrumb, BreadcrumbItem } from 
 import { Link } from 'react-router-dom';
 
 function RenderSalary({ staff }) {
-    const salaryOfStaff = parseFloat(staff.salaryScale,10)*3000000 + parseFloat(staff.overTime,10)  * 200000;
-    
+
+    const salaryOfStaff = parseInt(parseFloat(staff.salaryScale, 10) * 3000000 + parseFloat(staff.overTime, 10) * 200000);
     return (
         <div >
             <Card>
