@@ -25,19 +25,22 @@ function RenderStaff({ staff }) {
 const StaffDetail = (props) => {
     if (props.staff != null) {
         return (
-            <div className="container">
-                <div className='row'>
-                    <Breadcrumb>
-                        <BreadcrumbItem><Link to='/staffs'><b>Nhân Viên</b></Link></BreadcrumbItem>
-                        <BreadcrumbItem active>{props.staff.name}</BreadcrumbItem>
-                    </Breadcrumb>
-                </div>
-                <div className="row">
-                    <div className="col-12">
-                        <RenderStaff staff={props.staff} />
+            <div style={{ backgroundColor: '#ccffff' }}>
+                <div className="container">
+                    <div className='row'>
+                        <Breadcrumb>
+                            <BreadcrumbItem><Link to='/staffs'><b>Nhân Viên</b></Link></BreadcrumbItem>
+                            <BreadcrumbItem active>{props.staff.name}</BreadcrumbItem>
+                        </Breadcrumb>
+                    </div>
+                    <div className="row">
+                        <div className="col-12">
+                            <RenderStaff staff={props.staff} />
+                        </div>
                     </div>
                 </div>
             </div>
+            
         )
     }
     else {

@@ -33,7 +33,7 @@ const StaffList = (props) => {
 
     return (
         <div style={{ backgroundColor: '#b8e6f0' }}>
-            <div className="container" style={{ backgroundColor: '#a3cc8f' }} >
+            <div className="container" style={{ backgroundColor: '#ccffff' }} >
                 <div className='row'>
                     <div className='col-12'>
                         <h3>Nhân viên</h3>
