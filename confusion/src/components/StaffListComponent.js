@@ -32,17 +32,20 @@ const StaffList = (props) => {
     });
 
     return (
-        <div className="container">
-            <div className='row'>
-                <div className='col-12'>
-                    <h3>Nhân viên</h3>
-                    <hr />
+        <div style={{ backgroundColor: '#b8e6f0' }}>
+            <div className="container" style={{ backgroundColor: '#a3cc8f' }} >
+                <div className='row'>
+                    <div className='col-12'>
+                        <h3>Nhân viên</h3>
+                        <hr />
+                    </div>
+                </div>
+                <div className="row">       
+                        {staff}            
                 </div>
             </div>
-            <div className="row">       
-                    {staff}            
-            </div>
         </div>
+       
     );
 }
 
