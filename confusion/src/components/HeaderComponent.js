@@ -28,7 +28,7 @@ class Header extends Component {
                 </Jumbotron >
 
                 <div>
-                    <Navbar color="dark" expand="md" dark>
+                    <Navbar color="dark" expand="sm" dark>
                         <NavbarBrand className="mr-auto" href="/">
                             <img src="assets/images/logo.png" height="40" width="50" alt="logo" />
                         </NavbarBrand>

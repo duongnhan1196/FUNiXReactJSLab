@@ -36,7 +36,6 @@ class StaffList extends Component {
             department: "Sale",
             annualLeave: 0,
             overTime: 0,
-            salary: 30000,
             image: "/assets/images/alberto.png",
             touched: {
                 name: false,
@@ -111,15 +110,15 @@ class StaffList extends Component {
             overTime: ''
         };
         if (this.state.touched.name && name.length < 3)
-            errors.name = 'Name should be >= 3 characters';
+            errors.name = 'Yêu cầu nhiều hơn 2 ký tư';
         else if (this.state.touched.name && name.length > 30)
-            errors.name = 'Name should be <= 30 characters';
+            errors.name = 'Yêu cầu ít hơn 30 ký tự';
         if (this.state.touched.department && department.length < 1)
             errors.department = 'choose department';
         if (this.state.touched.doB && doB.length < 1)
-            errors.doB = 'Choose doB';
+            errors.doB = 'Yêu cầu nhập';
         if (this.state.touched.startDate && startDate.length < 1)
-            errors.startDate = 'Choose startDate';
+            errors.startDate = 'Yêu cầu nhập';
         if (this.state.touched.annualLeave && annualLeave.length < 1)
             errors.annualLeave = 'Cannot empty';
         if (this.state.touched.overTime && overTime.length < 1)
@@ -271,6 +270,7 @@ class StaffList extends Component {
                                         className="form-control"
                                         id="salaryScale"
                                         name="salaryScale"
+                                        placeholder="1.0 -> 3.0"
                                         value={this.state.salaryScale}
                                         valid={errors.salaryScale === ""}
                                         invalid={errors.salaryScale !== ""}
