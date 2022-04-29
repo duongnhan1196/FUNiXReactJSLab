@@ -6,6 +6,11 @@ import { Link } from 'react-router-dom';
 
 
 function RenderStaff({ staff }) {
+    let room = '';
+    if (typeof staff.department === 'string')
+        room = staff.department;
+    else
+        room = staff.department.name;
     return (
         <div className="row">
             <div className="col-12 col-md-3 col-sm-4">
@@ -15,7 +20,7 @@ function RenderStaff({ staff }) {
                     <CardTitle>Họ và tên: {staff.name}</CardTitle>
                     <CardText>Ngày sinh: {dateFormat(staff.doB, "dd/mm/yyyy")}</CardText>
                     <CardText>Ngày vào công ty: {dateFormat(staff.startDate, "dd/mm/yyyy")}</CardText>
-                    <CardText>Phòng ban: {staff.department.name}</CardText>
+                    <CardText>Phòng ban: {room}</CardText>
                     <CardText>Số ngày nghỉ còn lại: {staff.annualLeave}</CardText>
                     <CardText>Số ngày đã làm thêm: {staff.overTime}</CardText>
                 </div>     
