@@ -29,8 +29,6 @@ class Main extends Component {
         this.setState({
             staffs: [...this.state.staffs, newStaff]
         });
-        console.log(newStaff);
-        console.log(this.state.staffs);
     };
     
     render() {
