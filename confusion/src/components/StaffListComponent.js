@@ -152,24 +152,24 @@ class StaffList extends Component {
         return (
             <div style={{ backgroundColor: '#b8e6f0' }}>
                 <div className="container" style={{ backgroundColor: '#ccffff' }} >
-                    <div className='row'>
-                        <div className='col-4'>
-                            <h3>Nhân viên</h3>
-                            <hr />
-                        </div>
-                        <Form className='col-8' onSubmit={this.handleSearch}>
+                    <div>        
+                        <Form onSubmit={this.handleSearch}>
                             <FormGroup className="row">
-                                <Button color="primary" type="button" onClick={this.showModal}><span className="fa fa-plus fa-lg"></span> Thêm</Button>
+                                <h4 className='col-9 col-sm-4 col-md-3'>Nhân viên</h4>
+                                <Button className="col-2 col-sm-1 col-md-1 m-1 " type="button" onClick={this.showModal}>
+                                    <span className="fa fa-plus"></span>
+                                </Button>
                                 <Input
                                     type="text"
                                     id="keySearch"
                                     name="keySearch"
                                     placeholder="Tìm kiếm nhân viên"
-                                    className="col-8 m-1"
+                                    className="col-9 col-sm-4 col-md-6"
                                 />
-                                <Button type="submit"><span className="fa fa-search"></span> Tìm kiếm</Button>
+                                <Button color="primary" type="submit" className="col-2 col-sm-2 m-1 col-md-1">
+                                    <span className="fa fa-search"></span> Tìm
+                                </Button>
                             </FormGroup>
-
                         </Form>
                     </div>
                     <div className="row">
